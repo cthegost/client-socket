@@ -21,7 +21,7 @@ export const Chat = () => {
     const searchParams = Object.fromEntries(new URLSearchParams(search));
     setParams(searchParams);
     socket.emit("join", searchParams);
-  }, []);
+  }, [search]);
 
   React.useEffect(() => {
     socket.on("message", ({ data }) => {
